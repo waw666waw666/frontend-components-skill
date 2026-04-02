@@ -187,9 +187,9 @@ const LayoutDemo: React.FC = () => {
 
           <h4 style={{ marginTop: 16 }}>带文字的分割线</h4>
           <Divider>文字</Divider>
-          <Divider orientation="left">左对齐</Divider>
-          <Divider orientation="right">右对齐</Divider>
-          <Divider orientation="left" orientationMargin="0">左边距为 0</Divider>
+          <Divider>左对齐</Divider>
+          <Divider>右对齐</Divider>
+          <Divider>左边距为 0</Divider>
 
           <h4 style={{ marginTop: 16 }}>虚线</h4>
           <Divider dashed>虚线</Divider>

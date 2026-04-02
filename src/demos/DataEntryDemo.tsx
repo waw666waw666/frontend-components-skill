@@ -19,7 +19,7 @@ import {
   Tag,
   Tooltip,
 } from 'antd'
-import { UploadOutlined, SearchOutlined, UserOutlined, MailOutlined, LockOutlined, PhoneOutlined } from '@ant-design/icons'
+import { UploadOutlined, SearchOutlined, UserOutlined, MailOutlined, LockOutlined } from '@ant-design/icons'
 import type { UploadFile } from 'antd/es/upload/interface'
 import CopyPromptButton from '../components/CopyPromptButton'
 

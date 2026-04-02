@@ -608,23 +608,10 @@ function SwapModeDemo() {
   const swapListRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!swapListRef.current) return
-    import('sortablejs/modular/sortable.complete.esm.js').then((module) => {
-      const { Swap } = module
-      Sortable.mount(new Swap())
-      new Sortable(swapListRef.current!, {
-        swap: true,
-        swapClass: 'swap-highlight',
-        animation: 150,
-        ghostClass: 'sortable-ghost',
-        onSwap: (evt) => {
-          console.log('🔀 交换位置:', evt.dragged.textContent, '<->', evt.swapped.textContent)
-        },
-      })
-    }).catch(() => {
-      new Sortable(swapListRef.current!, {
-        animation: 150,
-        ghostClass: 'sortable-ghost',
-      })
+    // 使用基础 SortableJS，swap 模式需要额外插件
+    new Sortable(swapListRef.current, {
+      animation: 150,
+      ghostClass: 'sortable-ghost',
     })
   }, [])
 

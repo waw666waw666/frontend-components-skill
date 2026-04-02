@@ -7,9 +7,8 @@ interface CopyPromptButtonProps {
   componentType: string
 }
 
-const CopyPromptButton: React.FC<CopyPromptButtonProps> = ({ 
-  componentName, 
-  componentType
+const CopyPromptButton: React.FC<CopyPromptButtonProps> = ({
+  componentName,
 }) => {
   const [copied, setCopied] = React.useState(false)
 

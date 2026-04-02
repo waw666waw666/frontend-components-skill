@@ -205,7 +205,7 @@ const NavigationDemo: React.FC = () => {
         <h2>7. Anchor 锚点<CopyPromptButton componentName="Anchor" componentType="navigation" /></h2>
         <div className="demo-item">
           <Anchor
-            orientation="horizontal"
+            direction="horizontal"
             items={anchorItems}
           />
           <h4 style={{ marginTop: 16 }}>垂直锚点</h4>
