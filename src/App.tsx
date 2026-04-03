@@ -90,56 +90,59 @@ function App() {
   }
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Header style={{ background: '#fff', borderBottom: '1px solid #f0f0f0', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 16 }}>
-        <Button
-          ref={menuButtonRef}
-          type="primary"
-          icon={<MenuOutlined />}
-          onClick={() => setDrawerOpen(true)}
-        >
-          菜单
-        </Button>
-        <Title ref={titleRef} level={3} style={{ margin: 0, flex: 1 }}>
-          🎨 Frontend Components Skill 展示项目
-        </Title>
-        <Button
-          type="text"
-          icon={<QuestionCircleOutlined />}
-          onClick={() => setTourOpen(true)}
-        >
-          使用引导
-        </Button>
-      </Header>
-      <Content ref={contentRef} style={{ padding: '24px', overflow: 'auto' }}>
-        {renderContent()}
-      </Content>
+    <>
+      <Layout style={{ minHeight: '100vh' }}>
+        <Header style={{ background: '#fff', borderBottom: '1px solid #f0f0f0', padding: '0 24px', display: 'flex', alignItems: 'center', gap: 16 }}>
+          <Button
+            ref={menuButtonRef}
+            type="primary"
+            icon={<MenuOutlined />}
+            onClick={() => setDrawerOpen(true)}
+          >
+            菜单
+          </Button>
+          <Title ref={titleRef} level={3} style={{ margin: 0, flex: 1 }}>
+            🎨 Frontend Components Skill 展示项目
+          </Title>
+          <Button
+            type="text"
+            icon={<QuestionCircleOutlined />}
+            onClick={() => setTourOpen(true)}
+          >
+            使用引导
+          </Button>
+        </Header>
+        <Content ref={contentRef} style={{ padding: '24px', overflow: 'auto' }}>
+          {renderContent()}
+        </Content>
 
-      <Drawer
-        title="组件菜单"
-        placement="left"
-        onClose={() => setDrawerOpen(false)}
-        open={drawerOpen}
-        size={280}
-      >
-        <Menu
-          mode="inline"
-          selectedKeys={[selectedCategory]}
-          items={menuItems}
-          onClick={({ key }) => handleMenuClick(key)}
-          style={{ borderRight: 0 }}
-        />
-      </Drawer>
+        <Drawer
+          title="组件菜单"
+          placement="left"
+          onClose={() => setDrawerOpen(false)}
+          open={drawerOpen}
+          size={280}
+        >
+          <Menu
+            mode="inline"
+            selectedKeys={[selectedCategory]}
+            items={menuItems}
+            onClick={({ key }) => handleMenuClick(key)}
+            style={{ borderRight: 0 }}
+          />
+        </Drawer>
+
+        <BackTop style={{ right: 24, bottom: 24 }} />
+      </Layout>
 
       <Tour
         open={tourOpen}
         onClose={() => setTourOpen(false)}
         steps={tourSteps}
         mask={{ style: { filter: 'blur(2px)' } }}
+        getPopupContainer={() => document.body}
       />
-
-      <BackTop style={{ right: 24, bottom: 24 }} />
-    </Layout>
+    </>
   )
 }
 
