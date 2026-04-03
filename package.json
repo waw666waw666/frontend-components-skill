@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://h7ml.github.io/frontend-components-skill",
+  "homepage": "https://waw666waw666.github.io/frontend-components-skill",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
