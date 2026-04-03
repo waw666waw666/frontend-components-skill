@@ -18,7 +18,7 @@ const OtherDemo: React.FC = () => {
   const ref2 = useRef(null)
   const ref3 = useRef(null)
 
-  const tourSteps = [
+  const tourSteps: any = [
     {
       title: '欢迎使用',
       description: '这是 Frontend Components Skill 展示项目',

@@ -135,11 +135,7 @@ function App() {
         open={tourOpen}
         onClose={() => setTourOpen(false)}
         steps={tourSteps}
-        mask={{
-          style: {
-            filter: 'blur(2px)',
-          },
-        }}
+        mask={{ style: { filter: 'blur(2px)' } }}
       />
     </Layout>
   )
