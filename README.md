@@ -39,7 +39,13 @@
 
 ---
 
-## 📂 Skill 文档结构
+## 📦 项目结构
+
+本项目包含两部分：
+
+### 1️⃣ Skill 文档结构 (`skill/`)
+
+用于 AI 编程助手的技能知识库：
 
 本项目包含完整的 `frontend-components` Skill，位于 `skill/` 目录：
 
@@ -113,6 +119,26 @@ skill/frontend-components/
         ├── affix.md          # Affix 固钉
         ├── back-top.md       # BackTop 返回顶部
         └── drag-sort.md      # DragSort 拖拽排序 ⭐
+```
+
+### 2️⃣ 项目演示结构 (`src/`)
+
+用于展示 Skill 效果的交互式 Web 应用：
+
+```
+src/
+├── demos/                     # 组件演示页面
+│   ├── DataEntryDemo.tsx    # 数据录入组件演示
+│   ├── DataDisplayDemo.tsx  # 数据展示组件演示
+│   ├── FeedbackDemo.tsx      # 反馈组件演示
+│   ├── NavigationDemo.tsx    # 导航组件演示
+│   ├── LayoutDemo.tsx        # 布局组件演示
+│   ├── OtherDemo.tsx         # 其他组件演示
+│   └── DragSortDemo.tsx      # 拖拽排序演示
+├── components/
+│   └── CopyPromptButton.tsx # 提示词复制按钮
+├── App.tsx                   # 主应用组件
+└── main.tsx                  # 入口文件
 ```
 
 ---
