@@ -420,93 +420,7 @@ function HandleDragDemo() {
   )
 }
 
-// 7. 多选拖拽示例
-function MultiDragDemo() {
-  const multiListRef = useRef<HTMLUListElement>(null)
-  useEffect(() => {
-    if (!multiListRef.current) return
-    const list = multiListRef.current
-    let selectedItems = new Set<Element>()
-
-    const clickHandler = (e: MouseEvent) => {
-      const item = (e.target as HTMLElement).closest('li')
-      if (!item || item.classList.contains('sortable-drag')) return
-
-      if (e.ctrlKey || e.metaKey) {
-        item.classList.toggle('selected')
-        if (item.classList.contains('selected')) selectedItems.add(item)
-        else selectedItems.delete(item)
-      } else {
-        list.querySelectorAll('li').forEach((li) => li.classList.remove('selected'))
-        selectedItems.clear()
-        item.classList.add('selected')
-        selectedItems.add(item)
-      }
-    }
-
-    list.addEventListener('click', clickHandler)
-    const sortable = new Sortable(list, {
-      animation: 150,
-      ghostClass: 'sortable-ghost',
-      multiDrag: true,
-      selectedClass: 'selected',
-      avoidImplicitDeselect: true,
-    })
-
-    return () => {
-      list.removeEventListener('click', clickHandler)
-      sortable.destroy()
-    }
-  }, [])
-
-  const items = [
-    { id: 'm1', text: '📄 文档1.txt' },
-    { id: 'm2', text: '📄 文档2.txt' },
-    { id: 'm3', text: '📊 报表.xlsx' },
-    { id: 'm4', text: '🖼️ 图片1.png' },
-    { id: 'm5', text: '🖼️ 图片2.png' },
-    { id: 'm6', text: '🎵 音乐.mp3' },
-    { id: 'm7', text: '🎬 视频.mp4' },
-    { id: 'm8', text: '📦 压缩包.zip' },
-  ]
-
-  return (
-    <div className="demo-content-wrapper">
-      <div className="multidrag-container">
-        <div className="multidrag-hint">
-          <p>💡 提示：按住 Ctrl 点击可多选，按住 Shift 可范围选择</p>
-        </div>
-        <ul ref={multiListRef} className="multidrag-list">
-          {items.map((item) => (
-            <li key={item.id} data-id={item.id}>{item.text}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="info-section">
-        <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
-          <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
-            <pre>【动作：执行修改】目标：实现多选拖拽功能。需求：1.Ctrl+点击多选 2.Shift+范围选择 3.选中项高亮 4.一起拖拽。技术：SortableJS MultiDrag插件。</pre>
-            <span className="copy-hint">点击复制</span>
-          </div>
-        </div>
-        <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
-          <pre><code>{`import { MultiDrag } from 'sortablejs';
-Sortable.mount(new MultiDrag());
-
-new Sortable(el, {
-  multiDrag: true,
-  selectedClass: 'selected',
-  animation: 150
-});`}</code></pre>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// 8. 嵌套排序示例
+// 7. 嵌套排序示例
 function NestedSortDemo() {
   const nestedListRef = useRef<HTMLUListElement>(null)
   useEffect(() => {
@@ -669,7 +583,7 @@ export default function DragSortDemo() {
 
   return (
     <div className="drag-sort-demo">
-      <h1>拖动排序 (8个)</h1>
+      <h1>拖动排序 (7个)</h1>
 
       <Tabs items={tabItems} type="card" />
 

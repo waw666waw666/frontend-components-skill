@@ -31,7 +31,7 @@ function App() {
     { key: 'navigation', icon: <MenuOutlined />, label: '导航 (7个)' },
     { key: 'layout', icon: <LayoutOutlined />, label: '布局 (4个)' },
     { key: 'other', icon: <AppstoreOutlined />, label: '其他 (4个)' },
-    { key: 'drag-sort', icon: <DragOutlined />, label: '拖动排序 (8个)' },
+    { key: 'drag-sort', icon: <DragOutlined />, label: '拖动排序 (7个)' },
   ]
 
   const handleMenuClick = (key: string) => {
