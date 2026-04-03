@@ -10,7 +10,7 @@ function copyPrompt(element: HTMLElement) {
     element.classList.add('copied')
     const hint = element.querySelector('.copy-hint')
     if (hint) {
-      hint.textContent = '✓ 已复制!'
+      hint.textContent = '已复制!'
       setTimeout(() => {
         element.classList.remove('copied')
         hint.textContent = '点击复制'
@@ -38,8 +38,8 @@ function BasicListDemo() {
       ghostClass: 'sortable-ghost',
       chosenClass: 'sortable-chosen',
       dragClass: 'sortable-drag',
-      onStart: (evt) => console.log('🚀 拖拽开始:', evt.oldIndex),
-      onEnd: (evt) => console.log('✅ 拖拽结束:', evt.oldIndex, '->', evt.newIndex),
+      onStart: (evt) => console.log('拖拽开始:', evt.oldIndex),
+      onEnd: (evt) => console.log('拖拽结束:', evt.oldIndex, '->', evt.newIndex),
     })
     return () => sortable.destroy()
   }, [])
@@ -49,23 +49,23 @@ function BasicListDemo() {
       <div className="list-container">
         <h3>任务列表</h3>
         <ul ref={listRef} className="sortable-list">
-          <li data-id="1"><span className="item-icon">📧</span><span className="item-text">处理邮件</span></li>
-          <li data-id="2"><span className="item-icon">📊</span><span className="item-text">数据报表</span></li>
-          <li data-id="3"><span className="item-icon">🎨</span><span className="item-text">UI设计</span></li>
-          <li data-id="4"><span className="item-icon">💻</span><span className="item-text">代码审查</span></li>
-          <li data-id="5"><span className="item-icon">📝</span><span className="item-text">撰写文档</span></li>
+          <li data-id="1"><span className="item-icon">[邮]</span><span className="item-text">处理邮件</span></li>
+          <li data-id="2"><span className="item-icon">[表]</span><span className="item-text">数据报表</span></li>
+          <li data-id="3"><span className="item-icon">[设]</span><span className="item-text">UI设计</span></li>
+          <li data-id="4"><span className="item-icon">[码]</span><span className="item-text">代码审查</span></li>
+          <li data-id="5"><span className="item-icon">[文]</span><span className="item-text">撰写文档</span></li>
         </ul>
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板（点击复制）</h4>
+          <h4>提示词模板（点击复制）</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现基础列表拖拽排序功能。需求：1.创建可拖拽排序列表 2.列表项可上下调整顺序 3.拖拽时有视觉反馈 4.控制台输出新顺序。技术：使用SortableJS，动画150ms。验收：流畅拖拽、ghost效果、输出index。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`new Sortable(el, {
   animation: 150,
   ghostClass: 'sortable-ghost',
@@ -91,14 +91,14 @@ function GridSortDemo() {
   }, [])
 
   const items = [
-    { id: '1', icon: '🎨', label: '设计' },
-    { id: '2', icon: '💻', label: '开发' },
-    { id: '3', icon: '📊', label: '数据' },
-    { id: '4', icon: '📝', label: '文档' },
-    { id: '5', icon: '🧪', label: '测试' },
-    { id: '6', icon: '🚀', label: '部署' },
-    { id: '7', icon: '🔧', label: '维护' },
-    { id: '8', icon: '📈', label: '分析' },
+    { id: '1', icon: '设', label: '设计' },
+    { id: '2', icon: '开', label: '开发' },
+    { id: '3', icon: '数', label: '数据' },
+    { id: '4', icon: '文', label: '文档' },
+    { id: '5', icon: '测', label: '测试' },
+    { id: '6', icon: '部', label: '部署' },
+    { id: '7', icon: '维', label: '维护' },
+    { id: '8', icon: '析', label: '分析' },
   ]
 
   return (
@@ -113,14 +113,14 @@ function GridSortDemo() {
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现网格布局拖拽排序。需求：1.创建网格布局 2.网格项可拖拽重排 3.支持响应式 4.悬停放大效果。技术：SortableJS + CSS Grid。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`new Sortable(el, {
   animation: 150,
   ghostClass: 'sortable-ghost'
@@ -152,16 +152,16 @@ function KanbanDemo() {
   }, [])
 
   const columns = [
-    { ref: todoRef, title: '📝 待办事项', count: 3, cards: [
+    { ref: todoRef, title: '待办事项', count: 3, cards: [
       { id: 'k1', tag: 'urgent', tagText: '紧急', title: '修复登录bug', meta: '今天' },
       { id: 'k2', tag: 'normal', tagText: '普通', title: '优化首页加载', meta: '明天' },
       { id: 'k3', tag: 'low', tagText: '低优先级', title: '更新依赖包', meta: '本周' },
     ]},
-    { ref: doingRef, title: '🚀 进行中', count: 2, cards: [
+    { ref: doingRef, title: '进行中', count: 2, cards: [
       { id: 'k4', tag: 'urgent', tagText: '紧急', title: '设计新功能原型', meta: '今天' },
       { id: 'k5', tag: 'normal', tagText: '普通', title: '编写单元测试', meta: '明天' },
     ]},
-    { ref: doneRef, title: '✅ 已完成', count: 2, cards: [
+    { ref: doneRef, title: '已完成', count: 2, cards: [
       { id: 'k6', tag: 'normal', tagText: '普通', title: '部署测试环境', meta: '昨天' },
       { id: 'k7', tag: 'low', tagText: '低优先级', title: '整理文档', meta: '昨天' },
     ]},
@@ -189,14 +189,14 @@ function KanbanDemo() {
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现Trello式看板系统。需求：1.三列看板 2.卡片可跨列拖拽 3.显示卡片数量 4.卡片含标签和日期。技术：SortableJS group配置。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`new Sortable(el, {
   group: 'kanban',
   animation: 150,
@@ -237,30 +237,30 @@ function CrossListDemo() {
         <div className="cross-list-wrapper">
           <h4>列表 A（只能拖出）</h4>
           <ul ref={crossARef} className="cross-list">
-            <li data-id="a1">📱 手机</li>
-            <li data-id="a2">💻 笔记本</li>
-            <li data-id="a3">🖥️ 台式机</li>
+            <li data-id="a1">[手] 手机</li>
+            <li data-id="a2">[笔] 笔记本</li>
+            <li data-id="a3">[台] 台式机</li>
           </ul>
         </div>
-        <div className="cross-arrow">➡️</div>
+        <div className="cross-arrow">→</div>
         <div className="cross-list-wrapper">
           <h4>列表 B（只能拖入）</h4>
           <ul ref={crossBRef} className="cross-list">
-            <li data-id="b1">⌚ 手表</li>
-            <li data-id="b2">🎧 耳机</li>
+            <li data-id="b1">[表] 手表</li>
+            <li data-id="b2">[机] 耳机</li>
           </ul>
         </div>
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现单向跨列表拖拽。需求：1.列表A只能拖出 2.列表B只能拖入 3.支持克隆或移动模式。技术：SortableJS group配置pull/put。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`// 列表A - 只能拖出
 new Sortable(crossA, {
   group: { name: 'cross', pull: true, put: false }
@@ -300,7 +300,7 @@ function CloneDragDemo() {
         if (!item.querySelector('.delete-btn')) {
           const deleteBtn = document.createElement('button')
           deleteBtn.className = 'delete-btn'
-          deleteBtn.innerHTML = '✕'
+          deleteBtn.innerHTML = 'x'
           deleteBtn.onclick = () => {
             item.remove()
             if (cloneTargetRef.current?.children.length === 0) {
@@ -326,10 +326,10 @@ function CloneDragDemo() {
         <div className="clone-source">
           <h4>组件库（拖拽复制）</h4>
           <ul ref={cloneSourceRef} className="clone-list">
-            <li data-id="c1"><span className="component-icon">📝</span><span>文本输入</span></li>
-            <li data-id="c2"><span className="component-icon">☑️</span><span>复选框</span></li>
-            <li data-id="c3"><span className="component-icon">📊</span><span>下拉选择</span></li>
-            <li data-id="c4"><span className="component-icon">📅</span><span>日期选择</span></li>
+            <li data-id="c1"><span className="component-icon">[文]</span><span>文本输入</span></li>
+            <li data-id="c2"><span className="component-icon">[选]</span><span>复选框</span></li>
+            <li data-id="c3"><span className="component-icon">[下]</span><span>下拉选择</span></li>
+            <li data-id="c4"><span className="component-icon">[日]</span><span>日期选择</span></li>
           </ul>
         </div>
         <div className="clone-target">
@@ -341,14 +341,14 @@ function CloneDragDemo() {
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现组件库克隆拖拽。需求：1.左侧组件库 2.右侧画布区 3.克隆拖拽保留源 4.可删除画布组件。技术：SortableJS clone模式。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`// 源列表 - 克隆模式
 new Sortable(cloneSource, {
   group: { name: 'clone', pull: 'clone', put: false }
@@ -387,11 +387,11 @@ function HandleDragDemo() {
   return (
     <div className="demo-content-wrapper">
       <div className="handle-container">
-        <h4>点击左侧 ☰ 手柄拖拽</h4>
+        <h4>点击左侧手柄拖拽</h4>
         <ul ref={handleListRef} className="handle-list">
           {items.map((item) => (
             <li key={item.id} data-id={item.id}>
-              <span className="handle">☰</span>
+              <span className="handle">≡</span>
               <span className="content">
                 <strong>{item.title}</strong>
                 <small>{item.desc}</small>
@@ -402,14 +402,14 @@ function HandleDragDemo() {
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现手柄拖拽功能。需求：1.列表项有拖拽手柄 2.只有手柄可触发拖拽 3.内容区可自由交互。技术：SortableJS handle配置。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`new Sortable(el, {
   handle: '.handle',
   animation: 150
@@ -464,48 +464,48 @@ function NestedSortDemo() {
           <li data-id="n1">
             <div className="nested-item">
               <span className="toggle">▼</span>
-              <span className="folder">📁 前端开发</span>
+              <span className="folder">[夹] 前端开发</span>
             </div>
             <ul>
-              <li data-id="n1-1"><span className="file">📄 HTML</span></li>
-              <li data-id="n1-2"><span className="file">📄 CSS</span></li>
-              <li data-id="n1-3"><span className="file">📄 JavaScript</span></li>
+              <li data-id="n1-1"><span className="file">[页] HTML</span></li>
+              <li data-id="n1-2"><span className="file">[样] CSS</span></li>
+              <li data-id="n1-3"><span className="file">[脚] JavaScript</span></li>
             </ul>
           </li>
           <li data-id="n2">
             <div className="nested-item">
               <span className="toggle">▼</span>
-              <span className="folder">📁 后端开发</span>
+              <span className="folder">[夹] 后端开发</span>
             </div>
             <ul>
-              <li data-id="n2-1"><span className="file">📄 Node.js</span></li>
-              <li data-id="n2-2"><span className="file">📄 Python</span></li>
-              <li data-id="n2-3"><span className="file">📄 Java</span></li>
+              <li data-id="n2-1"><span className="file">[N] Node.js</span></li>
+              <li data-id="n2-2"><span className="file">[P] Python</span></li>
+              <li data-id="n2-3"><span className="file">[J] Java</span></li>
             </ul>
           </li>
           <li data-id="n3">
             <div className="nested-item">
               <span className="toggle">▼</span>
-              <span className="folder">📁 数据库</span>
+              <span className="folder">[夹] 数据库</span>
             </div>
             <ul>
-              <li data-id="n3-1"><span className="file">🗄️ MySQL</span></li>
-              <li data-id="n3-2"><span className="file">🗄️ MongoDB</span></li>
-              <li data-id="n3-3"><span className="file">🗄️ Redis</span></li>
+              <li data-id="n3-1"><span className="file">[M] MySQL</span></li>
+              <li data-id="n3-2"><span className="file">[m] MongoDB</span></li>
+              <li data-id="n3-3"><span className="file">[R] Redis</span></li>
             </ul>
           </li>
         </ul>
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现树形结构嵌套拖拽。需求：1.多级嵌套 2.同级排序 3.跨级移动 4.折叠展开。技术：SortableJS嵌套group配置。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`new Sortable(el, {
   group: 'nested',
   animation: 150,
@@ -529,13 +529,13 @@ function SwapModeDemo() {
     })
   }, [])
 
-  const items = ['1️⃣', '2️⃣', '3️⃣', '4️⃣', '5️⃣', '6️⃣', '7️⃣', '8️⃣', '9️⃣']
+  const items = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
   return (
     <div className="demo-content-wrapper">
       <div className="swap-container">
         <div className="swap-hint">
-          <p>💡 提示：拖拽时会与目标元素交换位置</p>
+          <p>提示：拖拽时会与目标元素交换位置</p>
         </div>
         <div ref={swapListRef} className="swap-grid">
           {items.map((item, idx) => (
@@ -545,14 +545,14 @@ function SwapModeDemo() {
       </div>
       <div className="info-section">
         <div className="prompt-block">
-          <h4>💬 提示词模板</h4>
+          <h4>提示词模板</h4>
           <div className="prompt-content" onClick={(e) => copyPrompt(e.currentTarget)}>
             <pre>【动作：执行修改】目标：实现拖拽交换位置功能。需求：1.拖拽时直接交换位置 2.不是插入 3.交换目标高亮。技术：SortableJS Swap插件。</pre>
             <span className="copy-hint">点击复制</span>
           </div>
         </div>
         <div className="code-block">
-          <h4>⚙️ 配置代码</h4>
+          <h4>配置代码</h4>
           <pre><code>{`import { Swap } from 'sortablejs';
 Sortable.mount(new Swap());
 
@@ -570,15 +570,15 @@ new Sortable(el, {
 // 主组件
 export default function DragSortDemo() {
   const tabItems = [
-    { key: 'basic', label: '📋 基础列表', children: <BasicListDemo /> },
-    { key: 'grid', label: '🔲 网格排序', children: <GridSortDemo /> },
-    { key: 'kanban', label: '📊 看板系统', children: <KanbanDemo /> },
-    { key: 'cross', label: '🔄 跨列表拖拽', children: <CrossListDemo /> },
-    { key: 'clone', label: '📄 克隆拖拽', children: <CloneDragDemo /> },
-    { key: 'handle', label: '☰ 手柄拖拽', children: <HandleDragDemo /> },
+    { key: 'basic', label: '基础列表', children: <BasicListDemo /> },
+    { key: 'grid', label: '网格排序', children: <GridSortDemo /> },
+    { key: 'kanban', label: '看板系统', children: <KanbanDemo /> },
+    { key: 'cross', label: '跨列表拖拽', children: <CrossListDemo /> },
+    { key: 'clone', label: '克隆拖拽', children: <CloneDragDemo /> },
+    { key: 'handle', label: '手柄拖拽', children: <HandleDragDemo /> },
 
-    { key: 'nested', label: '🌳 嵌套排序', children: <NestedSortDemo /> },
-    { key: 'swap', label: '🔀 交换模式', children: <SwapModeDemo /> },
+    { key: 'nested', label: '嵌套排序', children: <NestedSortDemo /> },
+    { key: 'swap', label: '交换模式', children: <SwapModeDemo /> },
   ]
 
   return (
@@ -662,7 +662,14 @@ export default function DragSortDemo() {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
-        .item-icon { font-size: 20px; }
+        .item-icon { 
+          font-size: 14px; 
+          font-weight: bold;
+          color: #667eea;
+          background: #e2e8f0;
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
         .item-text { font-weight: 500; }
 
         /* 网格 */
@@ -698,7 +705,11 @@ export default function DragSortDemo() {
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .grid-icon { font-size: 36px; margin-bottom: 8px; }
+        .grid-icon { 
+          font-size: 24px; 
+          font-weight: bold;
+          margin-bottom: 8px; 
+        }
         .grid-label { font-size: 14px; font-weight: 500; }
 
         /* 看板 */
@@ -856,7 +867,14 @@ export default function DragSortDemo() {
           justify-content: center;
         }
 
-        .component-icon { font-size: 20px; }
+        .component-icon { 
+          font-size: 14px;
+          font-weight: bold;
+          color: #667eea;
+          background: #e2e8f0;
+          padding: 4px 8px;
+          border-radius: 4px;
+        }
 
         .delete-btn {
           margin-left: auto;
