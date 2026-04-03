@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { Layout, Menu, Typography, Drawer, Button, Tour } from 'antd'
+import { Layout, Menu, Typography, Drawer, Button, Tour, BackTop } from 'antd'
 import {
   FormOutlined,
   TableOutlined,
@@ -137,6 +137,8 @@ function App() {
         steps={tourSteps}
         mask={{ style: { filter: 'blur(2px)' } }}
       />
+
+      <BackTop style={{ right: 24, bottom: 24 }} />
     </Layout>
   )
 }
