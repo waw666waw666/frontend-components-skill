@@ -1,8 +1,9 @@
-# 🎯 frontend-components-skill
+# 🎯 frontend-components-skill 演示项目
 
-> 基于 React + TypeScript + Ant Design + SortableJS 的 **前端组件 Skill** 官方演示项目
+> ⭐ **Skill 官方演示** | 基于 React + TypeScript + Ant Design + SortableJS 的前端组件效果展示平台
 
 [![GitHub Pages](https://img.shields.io/badge/🖥️%20在线演示-Live-brightgreen?logo=github)](https://waw666waw666.github.io/frontend-components-skill/)
+[![Skill](https://img.shields.io/badge/⭐%20Skill-Official-blue)](https://github.com/waw666waw666/frontend-components-skill)
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Ant Design](https://img.shields.io/badge/Ant%20Design-5.x-1677FF?logo=antdesign)](https://ant.design/)
@@ -10,26 +11,25 @@
 
 ---
 
-## ⭐ 项目简介
+## ⭐ 关于本项目
 
-本项目是 **frontend-components Skill** 的官方演示应用，旨在展示 AI 编程助手中的前端组件技能。
+本项目是 **frontend-components Skill** 的官方**效果演示**，用于展示 Skill 中定义的前端组件能力。
 
 ### 什么是 Skill？
 
-**Skill** 是一种结构化的 AI 技能知识库，包含：
+**Skill** 是 AI 编程助手中的**技能知识库**，包含：
 - 📚 组件功能描述
-- 📖 常用属性说明
+- 📖 常用属性说明  
 - 💻 代码示例
 - ✨ 最佳实践
 
-### 核心亮点
+### Skill 与演示的关系
 
-| 亮点 | 说明 |
+| 层级 | 说明 |
 |------|------|
-| 🗂️ **完整 Skill 文档** | 55 个文件，覆盖 51+ 组件 |
-| 🎨 **交互式演示** | 可直接在页面体验组件效果 |
-| 🤖 **AI 提示词模板** | 点击复制提示词，快速接入 AI 编程 |
-| 📱 **响应式设计** | 适配桌面端和移动端 |
+| 📖 **Skill 文档** | `skill/` 目录下的 Markdown 文件，包含组件知识 |
+| 🎬 **效果演示** | 本项目的交互式页面，直观展示组件效果 |
+| 🤖 **AI 提示词** | 点击复制提示词，可直接在 AI 助手中使用 |
 
 ---
 
@@ -50,18 +50,76 @@ skill/frontend-components/
 ├── SKILL-INDEX.md              # 技能索引
 └── sub-skills/                # 子技能目录
     ├── data-entry/             # 数据录入类 (10个)
+    │   ├── form.md            # Form 表单
+    │   ├── input.md           # Input 输入框
+    │   ├── select.md          # Select 选择器
+    │   ├── checkbox-radio.md  # Checkbox/Radio
+    │   ├── switch.md          # Switch 开关
+    │   ├── slider.md          # Slider 滑块
+    │   ├── date-picker.md     # DatePicker 日期选择
+    │   ├── rate.md            # Rate 评分
+    │   ├── upload.md          # Upload 上传
+    │   └── transfer.md        # Transfer 穿梭框
+    │
     ├── data-display/          # 数据展示类 (15个)
+    │   ├── table.md           # Table 表格
+    │   ├── list.md            # List 列表
+    │   ├── card.md            # Card 卡片
+    │   ├── tree.md            # Tree 树形
+    │   ├── calendar.md        # Calendar 日历
+    │   ├── timeline.md        # Timeline 时间轴
+    │   ├── statistic.md       # Statistic 统计
+    │   ├── qrcode.md          # QRCode 二维码
+    │   ├── image.md           # Image 图片
+    │   ├── carousel.md        # Carousel 走马灯
+    │   ├── collapse.md        # Collapse 折叠面板
+    │   ├── descriptions.md    # Descriptions 描述列表
+    │   ├── empty.md          # Empty 空状态
+    │   ├── badge.md           # Badge 徽标
+    │   └── tag.md             # Tag 标签
+    │
     ├── feedback/              # 反馈类 (11个)
-    ├── navigation/           # 导航类 (7个)
+    │   ├── modal.md          # Modal 对话框
+    │   ├── drawer.md         # Drawer 抽屉
+    │   ├── message.md        # Message 消息
+    │   ├── notification.md   # Notification 通知
+    │   ├── progress.md       # Progress 进度条
+    │   ├── spin.md           # Spin 加载
+    │   ├── skeleton.md       # Skeleton 骨架屏
+    │   ├── popover.md        # Popover 气泡卡片
+    │   ├── popconfirm.md     # Popconfirm 气泡确认
+    │   ├── result.md         # Result 结果
+    │   └── alert.md          # Alert 警告提示
+    │
+    ├── navigation/            # 导航类 (7个)
+    │   ├── menu.md           # Menu 导航菜单
+    │   ├── tabs.md           # Tabs 标签页
+    │   ├── breadcrumb.md     # Breadcrumb 面包屑
+    │   ├── dropdown.md       # Dropdown 下拉菜单
+    │   ├── pagination.md     # Pagination 分页
+    │   ├── steps.md          # Steps 步骤条
+    │   └── anchor.md         # Anchor 锚点
+    │
     ├── layout/               # 布局类 (4个)
+    │   ├── grid.md           # Grid 栅格
+    │   ├── layout.md         # Layout 布局
+    │   ├── space.md          # Space 间距
+    │   └── divider.md        # Divider 分割线
+    │
     └── other/                # 其他功能类 (4个)
+        ├── avatar.md         # Avatar 头像
+        ├── tour.md           # Tour 漫游式引导
+        ├── watermark.md       # Watermark 水印
+        ├── affix.md          # Affix 固钉
+        ├── back-top.md       # BackTop 返回顶部
+        └── drag-sort.md      # DragSort 拖拽排序 ⭐
 ```
 
 ---
 
-## ✨ 功能特性
+## ✨ Skill 效果展示
 
-本项目展示 **51+ 个 Ant Design 组件** 的实战用法：
+本项目展示 **51+ 个 Ant Design 组件** 的效果：
 
 ### 📋 数据录入 (10个)
 Form | Input | Select | Checkbox | Radio | Switch | Slider | DatePicker | Upload | Rate
@@ -82,7 +140,7 @@ Grid | Layout | Space | Divider
 Avatar | Tour | Watermark | Affix | BackTop
 
 ### 🎯 拖拽排序 (7个) ⭐ 特色
-基于 **SortableJS**：
+基于 **SortableJS** 实现：
 - 📋 基础列表排序
 - 🔲 网格排序
 - 📊 看板系统
@@ -121,39 +179,22 @@ npm run dev
 
 ---
 
-## 📖 Skill 使用指南
+## 📖 Skill 使用方式
 
-### 方式一：在线演示
-访问演示网站，点击任意组件查看效果和提示词模板。
+### 方式一：在线看效果
+访问演示网站，直观查看每个组件的效果。
 
-### 方式二：本地文档
-查看 `skill/` 目录下的 Markdown 文件，学习每个组件的用法。
+### 方式二：学习 Skill 文档
+阅读 `skill/` 目录下的 Markdown 文件，系统学习组件知识。
 
-### 方式三：AI 集成
-每个组件演示都有**提示词模板**，复制后可在 AI 编程助手中使用：
-
-```
-【动作：执行修改】
-目标：实现 xxx 组件功能
-
-需求详情：
-1. ...
-2. ...
-
-技术要求：
-- 使用 Ant Design
-- ...
-
-验收标准：
-1. ...
-2. ...
-```
+### 方式三：复制 AI 提示词
+点击组件旁边的提示词按钮，复制后可在 AI 编程助手中使用。
 
 ---
 
 ## 🌐 部署
 
-本项目已配置 GitHub Actions 自动部署，每次推送到 `master` 分支自动部署。
+本项目已配置 GitHub Actions 自动部署。
 
 ---
 
