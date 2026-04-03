@@ -207,6 +207,7 @@ const NavigationDemo: React.FC = () => {
           <Anchor
             direction="horizontal"
             items={anchorItems}
+            targetOffset={100}
           />
           <h4 style={{ marginTop: 16 }}>垂直锚点</h4>
           <Anchor

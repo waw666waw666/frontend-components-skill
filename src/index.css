@@ -568,6 +568,41 @@ body {
   }
 }
 
+/* Tour 组件样式修复 */
+.ant-tour {
+  z-index: 9999 !important;
+}
+
+.ant-tour-mask {
+  z-index: 9998 !important;
+}
+
+.ant-tour-panel {
+  z-index: 10000 !important;
+}
+
+.ant-tour-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 16px !important;
+  border-top: 1px solid #f0f0f0 !important;
+}
+
+.ant-tour-actions {
+  display: flex !important;
+  gap: 8px !important;
+}
+
+.ant-tour-indicators {
+  display: flex !important;
+  gap: 4px !important;
+}
+
+.ant-tour-close {
+  z-index: 10001 !important;
+}
+
 /* 滚动条样式 */
 ::-webkit-scrollbar {
   width: 8px;

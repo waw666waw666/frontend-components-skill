@@ -290,7 +290,7 @@ const DataEntryDemo: React.FC = () => {
         <h2>4. DatePicker 日期选择<CopyPromptButton componentName="DatePicker" componentType="data-entry" /></h2>
         <div className="demo-item">
           <Card title="日期选择器">
-            <Space direction="vertical" style={{ width: '100%' }} size="middle">
+            <Space orientation="vertical" style={{ width: '100%' }} size="middle">
               <DatePicker 
                 placeholder="选择日期" 
                 style={{ width: '100%' }}
@@ -367,7 +367,7 @@ const DataEntryDemo: React.FC = () => {
             </Radio.Group>
             <Divider />
             <Radio.Group value={radioValue} onChange={(e) => setRadioValue(e.target.value)}>
-              <Space direction="vertical">
+              <Space orientation="vertical">
                 <Radio value="a">选项 A - 详细描述</Radio>
                 <Radio value="b">选项 B - 详细描述</Radio>
                 <Radio value="c">选项 C - 详细描述</Radio>
@@ -413,7 +413,7 @@ const DataEntryDemo: React.FC = () => {
         <h2>7. Slider 滑块<CopyPromptButton componentName="Slider" componentType="data-entry" /></h2>
         <div className="demo-item">
           <Card title="滑块变体">
-            <Space direction="vertical" style={{ width: '100%' }} size="large">
+            <Space orientation="vertical" style={{ width: '100%' }} size="large">
               <div>
                 <div style={{ marginBottom: 8 }}>基础滑块 - 当前值: {sliderValue}</div>
                 <Slider 
@@ -461,7 +461,7 @@ const DataEntryDemo: React.FC = () => {
         <h2>8. Rate 评分<CopyPromptButton componentName="Rate" componentType="data-entry" /></h2>
         <div className="demo-item">
           <Card title="评分组件">
-            <Space direction="vertical" size="middle">
+            <Space orientation="vertical" size="middle">
               <div>
                 <span style={{ marginRight: 16 }}>基础评分:</span>
                 <Rate 
@@ -500,7 +500,7 @@ const DataEntryDemo: React.FC = () => {
         <h2>9. Upload 上传<CopyPromptButton componentName="Upload" componentType="data-entry" /></h2>
         <div className="demo-item">
           <Card title="上传组件">
-            <Space direction="vertical" style={{ width: '100%' }} size="middle">
+            <Space orientation="vertical" style={{ width: '100%' }} size="middle">
               <div>
                 <div style={{ marginBottom: 8 }}>点击上传:</div>
                 <Upload {...props}>
