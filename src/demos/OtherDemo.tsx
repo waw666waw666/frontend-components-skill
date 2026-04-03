@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react'
 import {
   Affix,
-  BackTop,
   Watermark,
   Tour,
   Button,
@@ -66,32 +65,22 @@ const OtherDemo: React.FC = () => {
       <div className="demo-section">
         <h2>2. BackTop 回到顶部<CopyPromptButton componentName="BackTop" componentType="other" /></h2>
         <div className="demo-item">
-          <p>向下滚动页面，右下角会出现回到顶部按钮</p>
-          <div style={{ height: 400, background: '#f0f0f0', padding: 16 }}>
-            <p>滚动区域</p>
-            <p>继续滚动...</p>
-            <p>再滚动...</p>
-            <p>继续...</p>
-            <p>快到底了...</p>
-            <p>到底了！</p>
-          </div>
-          <BackTop />
-          <BackTop visibilityHeight={100} style={{ right: 100 }}>
-            <div
-              style={{
-                height: 40,
-                width: 40,
-                lineHeight: '40px',
-                borderRadius: 4,
-                backgroundColor: '#1088e9',
-                color: '#fff',
-                textAlign: 'center',
-                fontSize: 14,
-              }}
-            >
-              UP
-            </div>
-          </BackTop>
+          <p>页面已全局集成 BackTop 回到顶部按钮，位于右下角。滚动页面时会出现。</p>
+          <Card>
+            <Title level={4}>功能说明</Title>
+            <Paragraph>
+              <ul>
+                <li>默认位置：页面右下角</li>
+                <li>触发条件：滚动高度超过 400px 时显示</li>
+                <li>点击按钮可快速回到页面顶部</li>
+              </ul>
+            </Paragraph>
+            <Title level={4}>代码示例</Title>
+            <pre style={{ background: '#f5f5f5', padding: 16, borderRadius: 8 }}>
+{`<BackTop style={{ right: 24, bottom: 24 }} />
+`}
+            </pre>
+          </Card>
         </div>
       </div>
 
