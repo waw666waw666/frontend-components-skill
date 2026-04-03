@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Typography,
+  Space,
 } from 'antd'
 import CopyPromptButton from '../components/CopyPromptButton'
 
@@ -13,11 +14,12 @@ const { Title, Paragraph, Text } = Typography
 
 const OtherDemo: React.FC = () => {
   const [tourOpen, setTourOpen] = useState(false)
+  const [tourCurrent, setTourCurrent] = useState(0)
   const ref1 = useRef(null)
   const ref2 = useRef(null)
   const ref3 = useRef(null)
 
-  const tourSteps: any = [
+  const tourSteps = [
     {
       title: '欢迎使用',
       description: '这是 Frontend Components Skill 展示项目',
@@ -34,6 +36,11 @@ const OtherDemo: React.FC = () => {
       target: () => ref3.current,
     },
   ]
+
+  const handleTourClose = () => {
+    setTourOpen(false)
+    setTourCurrent(0)
+  }
 
   return (
     <div className="demo-container">
@@ -165,8 +172,37 @@ const OtherDemo: React.FC = () => {
 
           <Tour
             open={tourOpen}
-            onClose={() => setTourOpen(false)}
+            onClose={handleTourClose}
+            current={tourCurrent}
+            onChange={(current) => setTourCurrent(current)}
             steps={tourSteps}
+            indicatorsRender={(current, total) => (
+              <Space>
+                <Button 
+                  size="small" 
+                  onClick={handleTourClose}
+                  style={{ marginRight: 8 }}
+                >
+                  退出引导
+                </Button>
+                <span>
+                  {current + 1} / {total}
+                </span>
+                <Button 
+                  type="primary"
+                  size="small"
+                  onClick={() => {
+                    if (current < total - 1) {
+                      setTourCurrent(current + 1)
+                    } else {
+                      handleTourClose()
+                    }
+                  }}
+                >
+                  {current < total - 1 ? '下一步' : '完成'}
+                </Button>
+              </Space>
+            )}
           />
         </div>
       </div>

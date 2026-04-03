@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import { Layout, Menu, Typography, Drawer, Button, Tour, BackTop } from 'antd'
+import { Layout, Menu, Typography, Drawer, Button, Tour, BackTop, Space } from 'antd'
 import {
   FormOutlined,
   TableOutlined,
@@ -25,6 +25,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState('data-entry')
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [tourOpen, setTourOpen] = useState(false)
+  const [tourCurrent, setTourCurrent] = useState(0)
 
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const titleRef = useRef<HTMLHeadingElement>(null)
@@ -66,6 +67,11 @@ function App() {
   const handleMenuClick = (key: string) => {
     setSelectedCategory(key)
     setDrawerOpen(false)
+  }
+
+  const handleTourClose = () => {
+    setTourOpen(false)
+    setTourCurrent(0)
   }
 
   const renderContent = () => {
@@ -137,10 +143,39 @@ function App() {
 
       <Tour
         open={tourOpen}
-        onClose={() => setTourOpen(false)}
+        onClose={handleTourClose}
+        current={tourCurrent}
+        onChange={(current) => setTourCurrent(current)}
         steps={tourSteps}
         mask={{ style: { filter: 'blur(2px)' } }}
         getPopupContainer={() => document.body}
+        indicatorsRender={(current, total) => (
+          <Space>
+            <Button 
+              size="small" 
+              onClick={handleTourClose}
+              style={{ marginRight: 8 }}
+            >
+              退出引导
+            </Button>
+            <span>
+              {current + 1} / {total}
+            </span>
+            <Button 
+              type="primary"
+              size="small"
+              onClick={() => {
+                if (current < total - 1) {
+                  setTourCurrent(current + 1)
+                } else {
+                  handleTourClose()
+                }
+              }}
+            >
+              {current < total - 1 ? '下一步' : '完成'}
+            </Button>
+          </Space>
+        )}
       />
     </>
   )
