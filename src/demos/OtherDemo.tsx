@@ -84,7 +84,13 @@ const OtherDemo: React.FC = () => {
       <div className="demo-section">
         <h2>3. Tour 漫游式引导<CopyPromptButton componentName="Tour" componentType="other" /></h2>
         <div className="demo-item">
-          <Button type="primary" onClick={() => setTourOpen(true)}>
+          <Button
+            type="primary"
+            onClick={() => {
+              // 延迟打开 Tour，确保 DOM 已准备好
+              setTimeout(() => setTourOpen(true), 100)
+            }}
+          >
             开始漫游引导
           </Button>
 
